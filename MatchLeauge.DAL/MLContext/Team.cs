@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MatchLeauge.BLL
+namespace MatchLeauge.DAL.MLContext
 {
-    internal class Repository
+    internal class Team
     {
     }
 }

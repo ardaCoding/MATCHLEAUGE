@@ -4,12 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MatchLeauge.BLL.DTO
+namespace MatchLeauge.DAL.MLContext.BaseEntity
 {
-    public class PlayerDTO
+    public abstract class BaseUpdate
     {
-        public int Id {  get; set; }
-
 
     }
 }

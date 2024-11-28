@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatchLeauge.BLL", "MatchLeauge.BLL\MatchLeauge.BLL.csproj", "{2AF4A17E-68DD-46EC-8289-8AB5CC72AAD5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MatchLeauge.BLL", "MatchLeauge.BLL\MatchLeauge.BLL.csproj", "{2AF4A17E-68DD-46EC-8289-8AB5CC72AAD5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatchLeauge.DAL", "MatchLeauge.DAL\MatchLeauge.DAL.csproj", "{B10F27D8-3040-4110-91E1-9456CB60BFF3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{2AF4A17E-68DD-46EC-8289-8AB5CC72AAD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2AF4A17E-68DD-46EC-8289-8AB5CC72AAD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2AF4A17E-68DD-46EC-8289-8AB5CC72AAD5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B10F27D8-3040-4110-91E1-9456CB60BFF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B10F27D8-3040-4110-91E1-9456CB60BFF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B10F27D8-3040-4110-91E1-9456CB60BFF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B10F27D8-3040-4110-91E1-9456CB60BFF3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
