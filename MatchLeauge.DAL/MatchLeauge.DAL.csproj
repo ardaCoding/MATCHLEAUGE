@@ -10,6 +10,7 @@
     <Folder Include="DTO\" />
     <Folder Include="IRepository\" />
     <Folder Include="IUnitOfWork\" />
+    <Folder Include="IService\" />
   </ItemGroup>
 
 </Project>
