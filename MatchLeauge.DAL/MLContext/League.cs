@@ -7,8 +7,10 @@ using System.Threading.Tasks;
 
 namespace MatchLeauge.DAL.MLContext
 {
-    internal class Player:BaseTable
+    public class League:BaseTable
     {
+        public string LeagueName { get; set; }
+        //List <Team> TeamList { get; set; }
 
     }
 }

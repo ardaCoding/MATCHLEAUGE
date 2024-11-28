@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace MatchLeauge.DAL.MLContext.BaseEntity
 {
-    public abstract class BaseUpdate
+    public abstract class BaseTable
     {
-
+        public int Id { get; set; }
+        //public DateTime CreateTime { get; set; }
+        //public int UserId { get; set; }
     }
 }
