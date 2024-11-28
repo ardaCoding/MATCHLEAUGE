@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatchLeauge.Service", "Matc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatchLeauge.WEB", "MatchLeauge.WEB\MatchLeauge.WEB.csproj", "{5E79477F-0758-4BD9-9902-C85F18847E36}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatchLeauge.API", "MatchLeauge.API\MatchLeauge.API.csproj", "{A1017421-986A-4B7D-BF5F-2D3371FAB166}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +39,10 @@ Global
 		{5E79477F-0758-4BD9-9902-C85F18847E36}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5E79477F-0758-4BD9-9902-C85F18847E36}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5E79477F-0758-4BD9-9902-C85F18847E36}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1017421-986A-4B7D-BF5F-2D3371FAB166}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1017421-986A-4B7D-BF5F-2D3371FAB166}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1017421-986A-4B7D-BF5F-2D3371FAB166}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1017421-986A-4B7D-BF5F-2D3371FAB166}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -46,6 +52,7 @@ Global
 		{B10F27D8-3040-4110-91E1-9456CB60BFF3} = {314AC79F-44E7-43FE-A898-6742925D1F04}
 		{C88A47B4-AC30-4AC2-9AF5-03EFF876F670} = {314AC79F-44E7-43FE-A898-6742925D1F04}
 		{5E79477F-0758-4BD9-9902-C85F18847E36} = {40E89B41-D192-435E-8DE2-A1BCA4814B95}
+		{A1017421-986A-4B7D-BF5F-2D3371FAB166} = {40E89B41-D192-435E-8DE2-A1BCA4814B95}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D6F9BEE6-7369-4D85-BC6E-1AF08790C05A}
