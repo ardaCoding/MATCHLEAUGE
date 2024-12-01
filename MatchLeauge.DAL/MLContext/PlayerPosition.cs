@@ -7,11 +7,8 @@ using System.Threading.Tasks;
 
 namespace MatchLeauge.DAL.MLContext
 {
-    public class League:BaseTable
+    public class Position:BaseTable
     {
-        public string LeagueName { get; set; }
-        //List <Team> TeamList { get; set; }
-
-
+        public string PositionName { get; set; }
     }
 }

@@ -1,0 +1,2 @@
+﻿     //public bool IsPlayerInMatchSubs { get; set; } //   maç kadrosuna oyuncu alındı mı ? ( örneğin 28 total futbolcudan 18i maç için kadroda)
+        Takım üzerinde zaten oyuncunun  oyunda 11de yer alıp almadıgı true/false olarak verilmiş durumda.

@@ -15,8 +15,10 @@ namespace MatchLeauge.DAL.MLContext
         byte Team1Score { get; set; }//Team1ScoreId
         byte Team2Score { get; set; }
         public DateTime MatchDate { get; set; }
-        public string? StadiumName { get; set; }//StadiumId=> StadiumTable
-#warning Match'larda LeagueId olacak mı
+        public int LeagueId { get; set; }
+
+        //#warning Match'larda LeagueId olacak mı
         //Match'larda LeagueId olması gerekli mi sonda bakılacak?????????????????
+
     }
 }
