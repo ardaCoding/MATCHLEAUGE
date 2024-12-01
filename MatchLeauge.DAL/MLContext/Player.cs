@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MatchLeauge.DAL.MLContext
 {
-    public class Player:BaseTable
+    public class Player : BaseTable
     {
         public string Name { get; set; }
         public string Surname { get; set; }
@@ -18,9 +18,9 @@ namespace MatchLeauge.DAL.MLContext
 
         public bool IsOnGame { get; set; } // oyuncu maçta oynayan bir oyuncu mu?  statüsü true mu?
 
-#warning neden bu şekilde bir kodlama seçilmedi
+        //#warning neden bu şekilde bir kodlama seçilmedi
         //[ForeignKey("teamId")]=>Neden??
         public int TeamId { get; set; }
     }
-    
+
 }

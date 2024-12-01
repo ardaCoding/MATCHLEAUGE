@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\MatchLeauge.DAL\MatchLeauge.DAL.csproj" />
+  </ItemGroup>
+
 </Project>
