@@ -1,2 +1,5 @@
 ﻿     //public bool IsPlayerInMatchSubs { get; set; } //   maç kadrosuna oyuncu alındı mı ? ( örneğin 28 total futbolcudan 18i maç için kadroda)
         Takım üzerinde zaten oyuncunun  oyunda 11de yer alıp almadıgı true/false olarak verilmiş durumda.
+------------------------------------------
+1) Bütün tablolar için Repository ve IRepository 
+2) Bütün tablolar için migration yapılacak=> 1-1, 1-Sonsuz  işlemleri yapılacak
