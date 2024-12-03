@@ -24,6 +24,7 @@ namespace MatchLeauge.API
 
             });
 
+            builder.Services.AddSwaggerDocument();
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
