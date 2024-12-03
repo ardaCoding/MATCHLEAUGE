@@ -1,2 +1,30 @@
 ﻿     //public bool IsPlayerInMatchSubs { get; set; } //   maç kadrosuna oyuncu alındı mı ? ( örneğin 28 total futbolcudan 18i maç için kadroda)
         Takım üzerinde zaten oyuncunun  oyunda 11de yer alıp almadıgı true/false olarak verilmiş durumda.
+
+        PROGRAM CSTE MİG İÇİN ==> builder.Services.AddDbContext<MatchLeagueDB>(x =>
+            {
+                x.UseSqlServer(builder.Configuration.GetConnectionString("SqlConnection"), option =>
+                {
+                    option.MigrationsAssembly(Assembly.GetAssembly(typeof(MatchLeagueDB)).GetName().Name);
+                    //Assembly=>derleyici,birle?me
+                });
+
+            }); 
+            APPSETTİNGSDE ==> "ConnectionStrings": {
+    "SqlConnection": "Data Source=DESKTOP-NHCQJJC;Initial Catalog=MatchLeagueDB;Integrated Security=True;Trust Server Certificate=True"
+  }, 
+
+  Entity frameworka  oluşması gereken migrationu anlatmak için ==> public void Configure(EntityTypeBuilder<League> builder)
+        {
+            builder.HasKey(x => x.Id);//PK
+            builder.Property(k=>k.Id).UseIdentityColumn();
+            builder.Property(k=>k.LeagueName).IsRequired(true).HasMaxLength(250);//boş geçilemez
+
+        }
+
+        context sınıfında ki dbset ile beraber onmodelcreating==>   protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+
+            base.OnModelCreating(modelBuilder);
+        }

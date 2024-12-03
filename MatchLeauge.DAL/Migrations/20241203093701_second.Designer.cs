@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MatchLeauge.DAL.Migrations
 {
     [DbContext(typeof(MatchLeagueDB))]
-    [Migration("20241201184747_First")]
-    partial class First
+    [Migration("20241203093701_second")]
+    partial class second
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
