@@ -12,15 +12,17 @@ namespace MatchLeauge.API.Controllers
             return View();
         }
 
-        //public IActionResult LeagueInsert()
-        //{
-        //    return View();
-        //}
+        [HttpPut]
+        public IActionResult LeagueInsert()
+        {
+            return View();
+        }
 
-        //public IActionResult LeagueUpdate()
-        //{
-        //    return View();
-        //}
+        [HttpDelete]
+        public IActionResult LeagueUpdate()
+        {
+            return View();
+        }
 
         //public IActionResult LeagueDelete()
         //{
