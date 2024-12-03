@@ -27,8 +27,9 @@ namespace MatchLeauge.API
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
-
-
+            app.UseOpenApi();
+            app.UseSwaggerUi();
+           
             app.UseHttpsRedirection();
 
             app.UseAuthorization();

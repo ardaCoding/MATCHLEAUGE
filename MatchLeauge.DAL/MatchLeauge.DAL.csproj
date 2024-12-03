@@ -10,9 +10,12 @@
 		<InvariantGlobalization>false</InvariantGlobalization>
 	</PropertyGroup>
 
+  <PropertyGroup>
+    <InvariantGlobalization>false</InvariantGlobalization>
+  </PropertyGroup>
+  
   <ItemGroup>
     <Folder Include="DTO\" />
-    <Folder Include="IRepository\" />
     <Folder Include="IUnitOfWork\" />
     <Folder Include="IService\" />
   </ItemGroup>
