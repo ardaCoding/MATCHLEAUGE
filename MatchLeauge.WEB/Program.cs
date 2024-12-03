@@ -26,9 +26,29 @@ namespace MatchLeauge.WEB
 
             app.UseAuthorization();
 
-            app.MapControllerRoute(
-                name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}");
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapAreaControllerRoute(
+                  name: "areas",
+                  areaName: "AdminPanel",
+                  pattern: "LeagueAdminPanel/{controller=Home}/{action=HomeIndex}"
+                //LeagueAdminPanel/Views/Home/HomeIndex.cshtml
+                );
+
+                endpoints.MapAreaControllerRoute(
+                  name: "areas",
+                  areaName: "AdminPanel2XX",
+                  pattern: "MyAdminXX/{controller=Home}/{action=HomeIndex}"
+                );
+
+                app.MapControllerRoute(
+               name: "default",
+               pattern: "{controller=Home}/{action=Index}/{id?}");
+                //pattern: "LeagueAdminPanel/{controller=Default}/{action=DefaultIndex}");
+
+            });
+
+           
 
             app.Run();
         }

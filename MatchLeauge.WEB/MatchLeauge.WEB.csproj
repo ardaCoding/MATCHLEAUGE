@@ -6,4 +6,17 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Components.QuickGrid.EntityFrameworkAdapter" Version="8.0.11" />
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="8.0.11" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.7" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Areas\LeagueAdminPanel\Data\" />
+    <Folder Include="Areas\LeagueAdminPanel\Models\" />
+    <Folder Include="Areas\MyAdminXX\Data\" />
+    <Folder Include="Areas\MyAdminXX\Models\" />
+  </ItemGroup>
+
 </Project>
