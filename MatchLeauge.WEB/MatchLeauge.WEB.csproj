@@ -15,6 +15,8 @@
   <ItemGroup>
     <Folder Include="Areas\LeagueAdminPanel\Data\" />
     <Folder Include="Areas\LeagueAdminPanel\Models\" />
+    <Folder Include="Areas\MyAdminXX\Data\" />
+    <Folder Include="Areas\MyAdminXX\Models\" />
   </ItemGroup>
 
 </Project>
