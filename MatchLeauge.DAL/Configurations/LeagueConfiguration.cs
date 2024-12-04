@@ -16,7 +16,8 @@ namespace MatchLeauge.DAL.Configurations
             builder.HasKey(x => x.Id);//PK
             builder.Property(k=>k.Id).UseIdentityColumn();
             builder.Property(k=>k.LeagueName).IsRequired(true).HasMaxLength(250);//boş geçilemez
-
+            builder.HasMany(m => m.LeaugeMatches);
+            
         }
     }
 }
