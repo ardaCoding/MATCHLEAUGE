@@ -4,6 +4,7 @@ using MatchLeauge.DAL.MLContext;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MatchLeauge.DAL.Migrations
 {
     [DbContext(typeof(MatchLeagueDB))]
-    partial class MatchLeagueDBModelSnapshot : ModelSnapshot
+    [Migration("20241205105423_DbConfig")]
+    partial class DbConfig
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
