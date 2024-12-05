@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MatchLeauge.DAL.MLContext
 {
-    internal class Match : BaseTable
+    public class Match : BaseTable
     {
         //public int Id { get; set; }
         int Team1Id { get; set; }
@@ -16,9 +16,10 @@ namespace MatchLeauge.DAL.MLContext
         byte Team2Score { get; set; }
         public DateTime MatchDate { get; set; }
         public int LeagueId { get; set; }
+       public League League { get; set; }   
 
-        //#warning Match'larda LeagueId olacak mı
-        //Match'larda LeagueId olması gerekli mi sonda bakılacak?????????????????
+
+        
 
     }
 }
