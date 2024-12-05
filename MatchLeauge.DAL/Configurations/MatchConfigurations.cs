@@ -15,9 +15,12 @@ namespace MatchLeauge.DAL.Configurations
         {
             builder.HasKey(x => x.Id);
             builder.Property(k => k.Id).UseIdentityColumn();
-            builder.HasOne(m=> m.League).WithMany(m=> m.LeaugeMatches).HasForeignKey(m=>m.LeagueId);
-
             builder.Property(m => m.MatchDate).HasColumnType("DateTime");
+
+            builder.HasOne(m=> m.League).WithMany(m=> m.LeaugeMatches).HasForeignKey(m=>m.LeagueId);//***
+                                                                                                    //------bir*******************sonsuz-***********************LeagueId değeri ile bağla
+      
+
         }
     }
 }

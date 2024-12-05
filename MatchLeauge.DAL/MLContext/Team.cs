@@ -12,6 +12,8 @@ namespace MatchLeauge.DAL.MLContext
         public string Name { get; set; }    
         public byte Logo { get; set; }
 
+        public ICollection< Match> Matchs1 { get; set; }
+        public ICollection< Match> Matchs2 { get; set; }
         //public static readonly int MAX_PLAYER_COUNT = 28; // toplam kadroda 25 oyuncu kabul etmesi gerekiyor
         //db ye trigger yapılabilir 28 geçmemesi için yada bll katmanında bunun için koşul yazılır
 
