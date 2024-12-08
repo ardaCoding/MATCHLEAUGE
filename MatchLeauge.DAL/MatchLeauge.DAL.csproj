@@ -15,7 +15,6 @@
   </PropertyGroup>
   
   <ItemGroup>
-    <Folder Include="DTO\" />
     <Folder Include="IUnitOfWork\" />
     <Folder Include="IService\" />
   </ItemGroup>

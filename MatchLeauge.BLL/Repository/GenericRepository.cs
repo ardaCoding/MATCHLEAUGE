@@ -1,4 +1,6 @@
 ﻿using MatchLeauge.DAL.IRepository;
+using MatchLeauge.DAL.MLContext;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +12,14 @@ namespace MatchLeauge.BLL.Repository
 {
     public class GenericRepository<TEntity> : IGenericRepository<TEntity> where TEntity : class
     {
+        protected readonly MatchLeagueDB _matchLeagueDB;
+        private readonly DbSet<TEntity> _dbSet;
+
+        public GenericRepository(MatchLeagueDB matchLeagueDB)//DI
+        {
+            _matchLeagueDB = matchLeagueDB;
+            _dbSet =_matchLeagueDB.Set<TEntity>();
+        }
 
         public TEntity Add(TEntity entity)
         {
@@ -28,8 +38,10 @@ namespace MatchLeauge.BLL.Repository
 
         public IQueryable<TEntity> GetAll()
         {
-            throw new NotImplementedException();
+            //return _matchLeagueDB.Set<TEntity>().AsQueryable();
+            return _dbSet.AsQueryable();
         }
+
 
         public TEntity GetById(int Id)
         {

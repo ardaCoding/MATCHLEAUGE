@@ -31,7 +31,7 @@ namespace MatchLeauge.WEB
             app.MapAreaControllerRoute(
                       name: "areas",
                       areaName: "LeagueAdminPanel",
-                      pattern: "LeagueAdminPanel/{controller=Home}/{action=HomeIndex}"
+                      pattern: "LeagueAdminPanel/{controller=Home}/{action=HomeIndex}/{id?}"
                     //LeagueAdminPanel/Views/Home/HomeIndex.cshtml
                     );
 

@@ -10,15 +10,17 @@ namespace MatchLeauge.BLL.Repository
 {
     public class LeagueRepository : GenericRepository<League>, ILeagueRepository
     {
-     
+        public LeagueRepository(MatchLeagueDB matchLeagueDB) : base(matchLeagueDB)
+        {
+        }
+
         public League LeagueInsert(League league)
         {
             throw new NotImplementedException();
         }
 
-        public List<League> LeagueList()
-        {
-            throw new NotImplementedException();
-        }
+     
+
+        
     }
 }

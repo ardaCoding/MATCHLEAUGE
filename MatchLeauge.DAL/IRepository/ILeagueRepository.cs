@@ -17,6 +17,7 @@ namespace MatchLeauge.DAL.IRepository
         IQueryable<League> GetAll();
         IQueryable<League> FindAll(Expression<Func<League, bool>> predicate);
         League GetById(int Id);
+        //List<League> LeagueList();
 
 
 
