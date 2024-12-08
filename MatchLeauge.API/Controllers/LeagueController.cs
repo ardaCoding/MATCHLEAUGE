@@ -1,16 +1,34 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using MatchLeauge.BLL.Repository;
+using MatchLeauge.DAL.IRepository;
+using YamlDotNet.Core.Tokens;
+
 
 namespace MatchLeauge.API.Controllers
 {
     [Route("api/[Controller]")]
     [ApiController]
-    public class LeagueController : Controller
+    public class LeagueController : BaseController
     {
+        ILeagueRepository _leagueRepository;
+
+        public LeagueController(ILeagueRepository leagueRepository)
+        {
+               _leagueRepository = leagueRepository;
+        }
+
+        //endpoint=> api/League/LeagueIndex...
         [HttpGet]
         public IActionResult LeagueIndex()
         {
-            return View();
+            var list=_leagueRepository.GetAll();
+            if (list!=null)
+            {
+                return ResultAPI(list);
+            }
+            return  ResultAPI(204);
         }
+
 
         [HttpPut]
         public IActionResult LeagueInsert()

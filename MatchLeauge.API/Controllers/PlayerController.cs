@@ -4,7 +4,7 @@ namespace MatchLeauge.API.Controllers
 {
     [Route("api/[Controller]")]
     [ApiController]
-    public class PlayerController : Controller
+    public class PlayerController : BaseController
     {
 
         [HttpGet]
