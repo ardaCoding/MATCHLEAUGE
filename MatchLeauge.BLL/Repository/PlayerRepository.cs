@@ -11,6 +11,10 @@ namespace MatchLeauge.BLL.Repository
 {
     public class PlayerRepository : GenericRepository<Team>, IPlayerRepository
     {
+        public PlayerRepository(MatchLeagueDB matchLeagueDB) : base(matchLeagueDB)
+        {
+        }
+
         public Player Add(Player player)
         {
             throw new NotImplementedException();

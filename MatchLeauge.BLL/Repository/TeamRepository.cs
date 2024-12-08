@@ -10,6 +10,10 @@ namespace MatchLeauge.BLL.Repository
 {
     public class TeamRepository : GenericRepository<Team>, ITeamRepository
     {
+        public TeamRepository(MatchLeagueDB matchLeagueDB) : base(matchLeagueDB)
+        {
+        }
+
         public Team TeamDelete(Team team)
         {
             throw new NotImplementedException();
