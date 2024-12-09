@@ -36,11 +36,11 @@ namespace MatchLeauge.API.Controllers
         {
             try
             {
-                if (tEntity.Count>0)
+                if (tEntity.Count()>0)
                 {
                     return SelectResponseResult(APIResponseDTO<List<TEntity>>.Success(200));
                 }
-                else if (tEntity.Count==0)
+                else if (tEntity.Count()==0)
                 {
                     
                 }
