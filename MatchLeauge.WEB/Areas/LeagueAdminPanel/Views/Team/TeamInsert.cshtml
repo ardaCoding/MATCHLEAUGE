@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewData["Title"] = "TeamInsert";
+    Layout = "~/Areas/LeagueAdminPanel/Views/Shared/_AdminLayout.cshtml";
+}
+
+div class="col-md-10">
+<!-- Form Element sizes -->
+<div class="card card-success">
+    <div class="card-header">
+        <h3 class="card-title">Oyuncuyu Ekle</h3>
+    </div>
+    <div class="card-body">
+        <div class="form-group">
+            <label>Takım Adı</label>
+            <input class="form-control" type="text" placeholder="Takım Adı Giriniz">
+
+        </div>
+        <div class="form-group">
+            <label>Logo Yükleyiniz</label>
+            <input class="form-control" type="file" placeholder="Default input">
+
+        </div>
+        <div class="form-group">
+            <label for="logoUpload">Logo Yükleyiniz</label>
+            <div class="custom-file">
+                <input type="file" class="custom-file-input" id="logoUpload" accept="image/*">
+                <label class="custom-file-label" for="logoUpload">
+                    <i class="fas fa-image"></i> Logo seçiniz
+                </label>
+            </div>
+        </div>
+        
+        </div>
+        <div class="card-footer">
+            <button type="submit" class="btn btn-primary">Kaydet</button>
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
