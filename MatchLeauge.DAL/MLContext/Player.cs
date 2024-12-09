@@ -15,12 +15,10 @@ namespace MatchLeauge.DAL.MLContext
         public DateTime BirthDate { get; set; }
         public string Nationality { get; set; }//bütün ülkeleri tutmak lazım=>89
         public int PlayerPositionId { get; set; }
-
         public bool IsOnGame { get; set; } // oyuncu maçta oynayan bir oyuncu mu?  statüsü true mu?
-
+        public int TeamId { get; set; }
         //#warning neden bu şekilde bir kodlama seçilmedi
         //[ForeignKey("teamId")]=>Neden??
-        public int TeamId { get; set; }
     }
 
 }
