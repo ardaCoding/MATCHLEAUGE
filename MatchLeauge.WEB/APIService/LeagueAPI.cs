@@ -16,7 +16,7 @@ namespace MatchLeauge.WEB.APIService
 
         public async  Task<List<League>> GetAll()
         {
-            //APı linki=> End point=>
+            //API linki=> End point=>
             var endPoint = "https://localhost:7046/api/League";
 
             var response = await _httpClient.GetFromJsonAsync<APIResponseDTO<List<League>>>(endPoint);
