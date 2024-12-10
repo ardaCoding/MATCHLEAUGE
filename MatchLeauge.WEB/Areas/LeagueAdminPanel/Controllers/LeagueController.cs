@@ -1,12 +1,22 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using MatchLeauge.WEB.APIService;
+using Microsoft.AspNetCore.Mvc;
 
 namespace MatchLeauge.WEB.Areas.LeagueAdminPanel.Controllers
 {
     public class LeagueController : Controller
     {
-        public IActionResult LeagueList()
+        private readonly LeagueGetAPI _leagueGetAPI;
+        public LeagueController(LeagueGetAPI leagueGetAPI)
         {
-            return View();
+            _leagueGetAPI = leagueGetAPI;
+        }
+
+
+        public async Task<IActionResult> LeagueList()
+        {
+          var list=  await _leagueGetAPI.GetAll();
+
+            return View(list);
         }
 
         public IActionResult LeagueInsert()

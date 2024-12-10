@@ -1,3 +1,5 @@
+using MatchLeauge.WEB.APIService;
+
 namespace MatchLeauge.WEB
 {
     public class Program
@@ -8,6 +10,14 @@ namespace MatchLeauge.WEB
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+
+            #region DI
+
+            builder.Services.AddScoped<LeagueGetAPI>();
+
+
+            #endregion
+
 
             var app = builder.Build();
 

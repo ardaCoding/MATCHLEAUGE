@@ -1,8 +1,10 @@
-﻿@{
+﻿@using MatchLeauge.DAL.MLContext
+@model List<League>
+
+@{
     ViewData["Title"] = "LeagueList";
     Layout = "~/Areas/LeagueAdminPanel/Views/Shared/_AdminLayout.cshtml";
 }
-
 
 
 <div class="card">
@@ -17,43 +19,30 @@
         <table id="example1" class="table table-bordered table-striped">
             <thead>
                 <tr>
-                    <th>Rendering engine</th>
-                    <th>Browser</th>
-                    <th>Platform(s)</th>
-                    <th>Engine version</th>
-                    <th>CSS grade</th>
+                    <th>ID</th>
+                    <th>ADI</th>
                     <th>Upt</th>
                     <th>Del</th>
                 </tr>
             </thead>
             <tbody>
 
-                @for (int i = 0; i < 30; i++)
+              @foreach (var item in Model)
                 {
                     <tr>
-                        <td>Trident-@i</td>
-                        <td>
-                            Internet
-                            Explorer 4.0
-                        </td>
-                        <td>Win 95+</td>
-                        <td> 4</td>
-                        <td>X</td>
+                        <td>@item.Id</td>
+                        <td>@item.LeagueName</td>
                         <td>
                             @*   <form action="~/LeagueAdminPanel/League/LeagueUpdate">
                         <button type="button" class="btn btn-block btn-warning btn-xs">Update</button>
                         Id değeri tutan input tanımlanması gereklidir
                         </form>
                         *@
-
-                            @{
-                                int leagueId = 91;
-                            }
-                            <a href="~/LeagueAdminPanel/League/LeagueUpdate/65" class="btn btn-block btn-warning btn-xs"> <i class="fas fa-pencil-alt"></i> </a>
+                            <a href="~/LeagueAdminPanel/League/LeagueUpdate/@item.Id" class="btn btn-block btn-warning btn-xs"> <i class="fas fa-pencil-alt"></i> </a>
 
                         </td>
                         <td>
-                            <a href="~/LeagueAdminPanel/League/LeagueUpdate/25" class="btn btn-block btn-danger btn-xs"> <i class="fas fa-trash"></i> </a>
+                            <a href="~/LeagueAdminPanel/League/LeagueUpdate/@item.Id" class="btn btn-block btn-danger btn-xs"> <i class="fas fa-trash"></i> </a>
                         </td>
 
                     </tr>
@@ -64,11 +53,8 @@
 
             <tfoot>
                 <tr>
-                    <th>Rendering engine</th>
-                    <th>Browser</th>
-                    <th>Platform(s)</th>
-                    <th>Engine version</th>
-                    <th>CSS grade</th>
+                    <th>ID</th>
+                    <th>ADI</th>
                     <th>Upt</th>
                     <th>Del</th>
                 </tr>
