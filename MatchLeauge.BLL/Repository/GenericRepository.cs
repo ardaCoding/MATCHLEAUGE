@@ -39,7 +39,9 @@ namespace MatchLeauge.BLL.Repository
         public IQueryable<TEntity> GetAll()
         {
             //return _matchLeagueDB.Set<TEntity>().AsQueryable();
-            return _dbSet.AsQueryable();
+            var list= _dbSet.AsQueryable();
+
+            return list;
         }
 
 

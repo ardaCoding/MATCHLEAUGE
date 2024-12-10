@@ -1,3 +1,5 @@
+using MatchLeauge.BLL.Repository;
+using MatchLeauge.DAL.IRepository;
 using MatchLeauge.DAL.MLContext;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
@@ -13,6 +15,14 @@ namespace MatchLeauge.API
             // Add services to the container.
 
             builder.Services.AddControllers();
+
+            #region DI 
+
+            builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));//DB kullanıldığı için ctor da typeof metodu ile sadece tipine göre işlem yapılacak anlamını verdik
+            builder.Services.AddScoped<ILeagueRepository, LeagueRepository>();
+
+
+            #endregion
 
             builder.Services.AddDbContext<MatchLeagueDB>(x =>
             {

@@ -12,6 +12,7 @@ namespace MatchLeauge.API.Controllers
         //aldın=>FB Oyuncularu tablo=> list
         //Aldın=> Alex bilgiler=> nesne
 
+        [NonAction]
         public IActionResult SelectResponseResult<TEntity>(APIResponseDTO<TEntity> responseDTO)
         {
             switch (responseDTO.StatuCode)
@@ -23,6 +24,12 @@ namespace MatchLeauge.API.Controllers
                         StatusCode = responseDTO.StatuCode,
                     };
 
+                //case 200:
+                //    return new ObjectResult(null)
+                //    {
+                //        StatusCode = responseDTO.StatuCode,
+                //    };
+
                 default:
 
                     return new ObjectResult(responseDTO)
@@ -32,50 +39,60 @@ namespace MatchLeauge.API.Controllers
             }
         }
 
-        public IActionResult ResultAPI<TEntity>(IQueryable<TEntity> tEntity)
+        [NonAction]
+        public IActionResult ResultAPI<TEntity>(List<TEntity> tEntity)
         {
             try
-            {
-                if (tEntity.Count()>0)
+            {               
+
+                if (tEntity.Count() > 0)
                 {
-                    return SelectResponseResult(APIResponseDTO<List<TEntity>>.Success(200));
+                    return SelectResponseResult(APIResponseDTO<List<TEntity>>.Success(200, tEntity));//başarılı=> json içeriği vermem gerekiyor
                 }
-                else if (tEntity.Count() ==0)
+                else if (tEntity.Count() == 0)
                 {
-                    
+                    return SelectResponseResult(APIResponseDTO<List<TEntity>>.Fail(200, "Liste boş"));
+
                 }
-                return SelectResponseResult(APIResponseDTO<List<TEntity>>.Success(204));
-                
-                }
-            catch (Exception ex)
-            {
-                return SelectResponseResult(APIResponseDTO<List<TEntity>>.Success(204));
+                return SelectResponseResult(APIResponseDTO<List<TEntity>>.Fail(201, "Hata"));
 
             }
+            catch (Exception ex)
+            {
+                return SelectResponseResult(APIResponseDTO<List<TEntity>>.Success(204, tEntity));
 
-
+            }
         }
 
+        [NonAction]
         public IActionResult ResultAPI<TEntity>(TEntity tEntity)
         {
             try
             {
-                if (tEntity != null)
+                if (tEntity!=null)
                 {
-                    return SelectResponseResult(APIResponseDTO<List<TEntity>>.Success(200));
+                    return SelectResponseResult(APIResponseDTO<TEntity>.Success(200, tEntity));//başarılı=> json içeriği vermem gerekiyor
                 }
-               
-                return SelectResponseResult(APIResponseDTO<List<TEntity>>.Fail(204,"Hatalı"));
+                else if (tEntity==null)
+                {
+                    return SelectResponseResult(APIResponseDTO<TEntity>.Fail(200, "Liste boş"));
+
+                }
+                return SelectResponseResult(APIResponseDTO<TEntity>.Fail(201, "Hata"));
 
             }
             catch (Exception ex)
             {
-                return SelectResponseResult(APIResponseDTO<List<TEntity>>.Fail(204,"Nesne boş"));
+                return SelectResponseResult(APIResponseDTO<TEntity>.Success(204, tEntity));
 
             }
-
-
         }
+
+        //public void Test()
+        //{
+        //    //Session ları çeğırmak=> server
+        //    //Cookie=> local
+        //}
 
     }
 }

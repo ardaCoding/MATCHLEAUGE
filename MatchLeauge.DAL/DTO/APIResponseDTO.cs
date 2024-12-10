@@ -18,7 +18,12 @@ namespace MatchLeauge.DAL.DTO
 
         public static APIResponseDTO<TEntity> Success(int statuCode)
         {
-            return new APIResponseDTO<TEntity> { StatuCode = statuCode };
+            return new APIResponseDTO<TEntity> {StatuCode = statuCode };
+        }
+
+        public static APIResponseDTO<TEntity> Success(int statuCode, TEntity entity)
+        {
+            return new APIResponseDTO<TEntity >{ Data= entity, StatuCode = statuCode };
         }
         public static APIResponseDTO<TEntity> Fail(int statuCode,string errors)
         {
