@@ -1,5 +1,7 @@
 using MatchLeauge.BLL.Repository;
+using MatchLeauge.BLL.UnitOfWork;
 using MatchLeauge.DAL.IRepository;
+using MatchLeauge.DAL.IUnitOfWork;
 using MatchLeauge.DAL.MLContext;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
@@ -20,6 +22,7 @@ namespace MatchLeauge.API
 
             builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));//DB kullanıldığı için ctor da typeof metodu ile sadece tipine göre işlem yapılacak anlamını verdik
             builder.Services.AddScoped<ILeagueRepository, LeagueRepository>();
+            builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 
             #endregion

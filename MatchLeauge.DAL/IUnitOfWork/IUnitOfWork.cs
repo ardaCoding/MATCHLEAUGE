@@ -9,6 +9,6 @@ namespace MatchLeauge.DAL.IUnitOfWork
     public interface IUnitOfWork
     {
         void Commit();//Kayıt yapar
-
+        int CommitXX();
     }
 }

@@ -10,11 +10,9 @@ namespace MatchLeauge.DAL.IRepository
 {
     public interface IMatchRepository : IGenericRepository<Match>
     {
-        Match Add(Match match);
-        Match Update(Player match);
-        Match Delete(Match match);
-        IQueryable<Match> GetAll();
-        IQueryable<Match> FindAll(Expression<Func<Player, bool>> predicate);
-        Match GetById(int Id);
+        Match MatchAdd(Match match);
+        Match MatchUpdate(Player match);
+        Match MatchDelete(Match match);
+        IQueryable<Match> MatchGetAll();
     }
 }

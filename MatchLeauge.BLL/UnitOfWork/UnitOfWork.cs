@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MatchLeauge.BLL.UnitOfWork
 {
-    internal class UnitOfWork : IUnitOfWork
+    public class UnitOfWork : IUnitOfWork
     {
 
         protected readonly MatchLeagueDB _matchLeagueDB;
@@ -20,6 +20,11 @@ namespace MatchLeauge.BLL.UnitOfWork
         public void Commit()
         {
              _matchLeagueDB.SaveChanges();
+        }
+
+        public int CommitXX()
+        {
+           return  _matchLeagueDB.SaveChanges();
         }
     }
 }

@@ -11,12 +11,10 @@ namespace MatchLeauge.DAL.IRepository
     public interface ILeagueRepository: IGenericRepository<League>
     {
 
-        League Add(League league);
-        League Update(League league);
-        League Delete(League league);
-        IQueryable<League> GetAll();
-        IQueryable<League> FindAll(Expression<Func<League, bool>> predicate);
-        League GetById(int Id);
+        League LeagueAdd(League league);
+        League LeagueUpdate(League league);
+        League LeagueDelete(League league);
+        IQueryable<League> LeagueGetAll();
         //List<League> LeagueList();
 
 
