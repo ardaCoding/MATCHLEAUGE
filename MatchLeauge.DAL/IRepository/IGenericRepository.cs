@@ -18,7 +18,7 @@ namespace MatchLeauge.DAL.IRepository
         //void Update(TEntity entity);
         //void Delete(TEntity entity);
 
-        TEntity Add(TEntity entity);
+        void Add(TEntity entity);
         TEntity Update(TEntity entity);
         TEntity Delete(TEntity entity);
         //

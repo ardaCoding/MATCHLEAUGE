@@ -38,5 +38,10 @@ namespace MatchLeauge.WEB.APIService
 
         }
 
+
+        public void LeagueInsert(League league)
+        {
+
+        }
     }
 }

@@ -21,9 +21,9 @@ namespace MatchLeauge.BLL.Repository
             _dbSet =_matchLeagueDB.Set<TEntity>();
         }
 
-        public TEntity Add(TEntity entity)
+        public void Add(TEntity entity)
         {
-            throw new NotImplementedException();
+            _dbSet.Add(entity);
         }
 
         public TEntity Delete(TEntity entity)
