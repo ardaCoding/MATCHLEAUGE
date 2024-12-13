@@ -20,6 +20,21 @@ namespace MatchLeauge.WEB.APIService
             return response.Data;
 
         }
+        public async Task<Player> PlayerInsert(Player player)
+        {
+            //APı linki=> End point=>
+            var endPoint = "https://localhost:7046/api/AddPlayer";
+
+            var response = await _httpClient.PostAsJsonAsync(endPoint, player);
+
+            if (response == null)
+            {
+                return null;
+            }
+            var responseBody = await response.Content.ReadFromJsonAsync<APIResponseDTO<Player>>();
+            return responseBody.Data;
+
+        }
 
 
     }
