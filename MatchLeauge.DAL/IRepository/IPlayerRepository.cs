@@ -10,11 +10,9 @@ namespace MatchLeauge.DAL.IRepository
 {
     public interface IPlayerRepository:IGenericRepository<Player>
     {
-        Player Add(Player player);
-        Player Update(Player player);
-        Player Delete(Player player);
-        IQueryable<Player> GetAll();
-        IQueryable<Player> FindAll(Expression<Func<Player, bool>> predicate);
-        Player GetById(int Id);
+        Player PlayerAdd(Player player);
+        Player PlayerUpdate(Player player);
+        Player PlayerDelete(Player player);
+
     }
 }

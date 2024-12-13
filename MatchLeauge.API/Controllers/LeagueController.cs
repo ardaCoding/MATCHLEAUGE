@@ -2,6 +2,9 @@
 using MatchLeauge.BLL.Repository;
 using MatchLeauge.DAL.IRepository;
 using YamlDotNet.Core.Tokens;
+using MatchLeauge.DAL.MLContext;
+using MatchLeauge.DAL.IUnitOfWork;
+using MatchLeauge.DAL.DTO;
 
 
 namespace MatchLeauge.API.Controllers
@@ -11,28 +14,37 @@ namespace MatchLeauge.API.Controllers
     public class LeagueController : BaseController
     {
         ILeagueRepository _leagueRepository;
+        IUnitOfWork _unitOfWork;
 
-        public LeagueController(ILeagueRepository leagueRepository)
+        public LeagueController(ILeagueRepository leagueRepository, IUnitOfWork unitOfWork)
         {
-               _leagueRepository = leagueRepository;
+            _leagueRepository = leagueRepository;
+            _unitOfWork = unitOfWork;
         }
 
         //endpoint=> api/League/LeagueIndex...
         [HttpGet]
         public IActionResult LeagueIndex()
         {
-            var list=_leagueRepository.GetAll();
-            if (list!=null)
+            var list = _leagueRepository.GetAll();
+            if (list != null)
             {
                 return ResultAPI(list);
             }
-            return  ResultAPI(204);
+            return ResultAPI(204);
         }
 
 
-        [HttpPut]
-        public IActionResult LeagueInsert()
+        //[HttpPost]//=>https://localhost:7046/api/LeagueInsert"
+        [HttpPost("AddLeague")]//=>https://localhost:7046/api/AddLeague"
+        public IActionResult LeagueInsert(League league)
         {
+            //League league = new League();
+            //league.LeagueName= leagueDTO.LeagueName;
+
+            var add = _leagueRepository.LeagueAdd(league);
+           var result=_unitOfWork.CommitXX();
+
             return View();
         }
 

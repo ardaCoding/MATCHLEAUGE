@@ -15,6 +15,10 @@ namespace MatchLeauge.WEB
 
             builder.Services.AddScoped<LeagueGetAPI>();
 
+            builder.Services.AddHttpClient<LeagueGetAPI>(k =>
+            {
+                k.BaseAddress = new Uri(builder.Configuration["Baseurl"]);
+            });
 
             #endregion
 

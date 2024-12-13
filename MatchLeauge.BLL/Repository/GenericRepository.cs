@@ -21,14 +21,14 @@ namespace MatchLeauge.BLL.Repository
             _dbSet =_matchLeagueDB.Set<TEntity>();
         }
 
-        public TEntity Add(TEntity entity)
+        public void Add(TEntity entity)
         {
-            throw new NotImplementedException();
+            _dbSet.Add(entity);
         }
 
-        public TEntity Delete(TEntity entity)
+        public void Delete(TEntity entity)
         {
-            throw new NotImplementedException();
+            _dbSet.Remove(entity);
         }
 
         public IQueryable<TEntity> FindAll(Expression<Func<TEntity, bool>> predicate)
@@ -50,9 +50,9 @@ namespace MatchLeauge.BLL.Repository
             throw new NotImplementedException();
         }
 
-        public TEntity Update(TEntity entity)
+        public void Update(TEntity entity)
         {
-            throw new NotImplementedException();
+            _dbSet.Update(entity);
         }
     }
 }

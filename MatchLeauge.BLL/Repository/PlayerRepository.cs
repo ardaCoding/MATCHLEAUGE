@@ -9,50 +9,11 @@ using System.Threading.Tasks;
 
 namespace MatchLeauge.BLL.Repository
 {
-    public class PlayerRepository : GenericRepository<Team>, IPlayerRepository
+    public class PlayerRepository : GenericRepository<Team>
     {
         public PlayerRepository(MatchLeagueDB matchLeagueDB) : base(matchLeagueDB)
         {
         }
 
-        public Player Add(Player player)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Player Delete(Player player)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IQueryable<Player> FindAll(Expression<Func<Player, bool>> predicate)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Player Update(Player player)
-        {
-            throw new NotImplementedException();
-        }
-
-        IQueryable<Player> IPlayerRepository.GetAll()
-        {
-            throw new NotImplementedException();
-        }
-
-        IQueryable<Player> IGenericRepository<Player>.GetAll()
-        {
-            throw new NotImplementedException();
-        }
-
-        Player IPlayerRepository.GetById(int Id)
-        {
-            throw new NotImplementedException();
-        }
-
-        Player IGenericRepository<Player>.GetById(int Id)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

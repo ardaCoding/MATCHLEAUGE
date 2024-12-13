@@ -15,12 +15,12 @@ namespace MatchLeauge.BLL.Repository
         {
         }
 
-        public Match Add(Match match)
+        public void Add(Match entity)
         {
             throw new NotImplementedException();
         }
 
-        public Match Delete(Match match)
+        public void Delete(Match entity)
         {
             throw new NotImplementedException();
         }
@@ -35,27 +35,37 @@ namespace MatchLeauge.BLL.Repository
             throw new NotImplementedException();
         }
 
-        public Match Update(Player match)
+        public Match MatchAdd(Match match)
         {
             throw new NotImplementedException();
         }
 
-        public Match Update(Match entity)
+        public Match MatchDelete(Match match)
         {
             throw new NotImplementedException();
         }
 
-        IQueryable<Match> IMatchRepository.GetAll()
+        public IQueryable<Match> MatchGetAll()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Match MatchGetById(int Id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Match MatchUpdate(Player match)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Update(Match entity)
         {
             throw new NotImplementedException();
         }
 
         IQueryable<Match> IGenericRepository<Match>.GetAll()
-        {
-            throw new NotImplementedException();
-        }
-
-        Match IMatchRepository.GetById(int Id)
         {
             throw new NotImplementedException();
         }
