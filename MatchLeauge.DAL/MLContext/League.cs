@@ -11,8 +11,7 @@ namespace MatchLeauge.DAL.MLContext
     {
         public string LeagueName { get; set; }
         public ICollection<Match> LeaugeMatches { get; set; }//Değil
-        //List <Team> TeamList { get; set; }
-
+        //List <Team> TeamList { get; set; }Player
 
     }
 }

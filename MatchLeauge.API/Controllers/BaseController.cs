@@ -6,7 +6,6 @@ namespace MatchLeauge.API.Controllers
     public class BaseController : Controller
     {
 
-
         //gönder
         //alabilir
         //aldın=>FB Oyuncularu tablo=> list

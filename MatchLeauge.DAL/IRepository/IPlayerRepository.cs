@@ -13,6 +13,7 @@ namespace MatchLeauge.DAL.IRepository
         Player PlayerAdd(Player player);
         Player PlayerUpdate(Player player);
         Player PlayerDelete(Player player);
+        IQueryable<Player> PlayerGetAll();
 
     }
 }
