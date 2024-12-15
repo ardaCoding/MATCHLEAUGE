@@ -1,11 +1,13 @@
-﻿using MatchLeauge.WEB.APIService;
+﻿using MatchLeauge.DAL.DTO;
+using MatchLeauge.DAL.MLContext;
+using MatchLeauge.WEB.APIService;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MatchLeauge.WEB.Areas.LeagueAdminPanel.Controllers
 {
     public class LeagueController : Controller
     {
-        private readonly LeagueGetAPI _leagueGetAPI;
+        private readonly LeagueGetAPI _leagueGetAPI;//DI
         public LeagueController(LeagueGetAPI leagueGetAPI)
         {
             _leagueGetAPI = leagueGetAPI;
@@ -21,6 +23,14 @@ namespace MatchLeauge.WEB.Areas.LeagueAdminPanel.Controllers
 
         public IActionResult LeagueInsert()
         {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult LeagueInsert(LeagueDTO leagueDTO)
+        {
+            var getAPI = _leagueGetAPI.LeagueInsert(leagueDTO);
+
             return View();
         }
 

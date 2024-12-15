@@ -1,3 +1,4 @@
+using MatchLeauge.BLL.MapperProfile;
 using MatchLeauge.BLL.Repository;
 using MatchLeauge.BLL.UnitOfWork;
 using MatchLeauge.DAL.IRepository;
@@ -23,6 +24,9 @@ namespace MatchLeauge.API
             builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));//DB kullanıldığı için ctor da typeof metodu ile sadece tipine göre işlem yapılacak anlamını verdik
             builder.Services.AddScoped<ILeagueRepository, LeagueRepository>();
             builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+            builder.Services.AddAutoMapper(typeof(MapProfile));
+                //DTO=> Table
+                //Table=> DTO
 
 
             #endregion

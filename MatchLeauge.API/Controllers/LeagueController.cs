@@ -5,6 +5,7 @@ using YamlDotNet.Core.Tokens;
 using MatchLeauge.DAL.MLContext;
 using MatchLeauge.DAL.IUnitOfWork;
 using MatchLeauge.DAL.DTO;
+using AutoMapper;
 
 
 namespace MatchLeauge.API.Controllers
@@ -15,11 +16,13 @@ namespace MatchLeauge.API.Controllers
     {
         ILeagueRepository _leagueRepository;
         IUnitOfWork _unitOfWork;
+        IMapper _mapper;
 
-        public LeagueController(ILeagueRepository leagueRepository, IUnitOfWork unitOfWork)
+        public LeagueController(ILeagueRepository leagueRepository, IUnitOfWork unitOfWork,IMapper mapper)
         {
             _leagueRepository = leagueRepository;
             _unitOfWork = unitOfWork;
+            _mapper = mapper;
         }
 
         //endpoint=> api/League/LeagueIndex...
@@ -37,15 +40,24 @@ namespace MatchLeauge.API.Controllers
 
         //[HttpPost]//=>https://localhost:7046/api/LeagueInsert"
         [HttpPost("AddLeague")]//=>https://localhost:7046/api/AddLeague"
-        public IActionResult LeagueInsert(League league)
+        public IActionResult LeagueInsert(LeagueDTO leagueDTO)
         {
+            #region 1.Hali
             //League league = new League();
-            //league.LeagueName= leagueDTO.LeagueName;
-
-            var add = _leagueRepository.LeagueAdd(league);
-           var result=_unitOfWork.CommitXX();
-
-            return View();
+            //league.LeagueName = leagueDTO.LeagueName;
+            /* Mapper=> Nedir
+            */
+            //var add = _leagueRepository.LeagueAdd(league);//İsim, DTarihi, KayıtTarihi, Maaş,...=> RAM 
+            //var add = _leagueRepository.LeagueAdd(_mapper.Map<League>(leagueDTO));
+            //var result = _unitOfWork.Commit();//Database(Server)//Id:7// 
+            #endregion
+                        
+            var add = _leagueRepository.LeagueAdd(_mapper.Map<League>(leagueDTO));
+            if (add !=null)
+            {
+                return ResultAPI(add);
+            }
+            return NoContent();
         }
 
         [HttpDelete]

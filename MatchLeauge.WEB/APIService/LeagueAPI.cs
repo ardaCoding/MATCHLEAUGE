@@ -39,18 +39,18 @@ namespace MatchLeauge.WEB.APIService
         }
 
 
-        public async Task<League> LeagueInsert(League league)
+        public async Task<League> LeagueInsert(LeagueDTO leagueDTO)
         {
             //APı linki=> End point=>
-            var endPoint = "https://localhost:7046/api/AddLeague";
+            var endPoint = "https://localhost:7046/api/League/AddLeague";
 
-            var response = await  _httpClient.PostAsJsonAsync(endPoint, league);
+            var request = await  _httpClient.PostAsJsonAsync(endPoint, leagueDTO);
 
-            if (response==null)
+            if (request == null)
             {
                 return null;
             }
-            var responseBody = await response.Content.ReadFromJsonAsync<APIResponseDTO<League>>();
+            var responseBody = await request.Content.ReadFromJsonAsync<APIResponseDTO<League>>();
             return responseBody.Data;
 
         }

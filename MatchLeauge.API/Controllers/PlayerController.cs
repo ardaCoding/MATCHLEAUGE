@@ -36,7 +36,7 @@ namespace MatchLeauge.API.Controllers
             //league.LeagueName= leagueDTO.LeagueName;
 
             var add = _playerRepository.PlayerAdd(player);
-            var result = _unitOfWork.CommitXX();
+            //var result = _unitOfWork.CommitXX();
 
             return View();
         }

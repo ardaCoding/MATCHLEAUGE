@@ -1,4 +1,5 @@
 ﻿using MatchLeauge.DAL.IRepository;
+using MatchLeauge.DAL.IUnitOfWork;
 using MatchLeauge.DAL.MLContext;
 using System;
 using System.Collections.Generic;
@@ -10,19 +11,29 @@ using System.Threading.Tasks;
 namespace MatchLeauge.BLL.Repository
 {
     public class LeagueRepository : GenericRepository<League>, ILeagueRepository
-    {
-        public LeagueRepository(MatchLeagueDB matchLeagueDB) : base(matchLeagueDB)
+    {  
+        IUnitOfWork _unitOfWork;
+        public LeagueRepository(MatchLeagueDB matchLeagueDB, IUnitOfWork unitOfWork) : base(matchLeagueDB)
         {
+            _unitOfWork= unitOfWork;
         }
+
+      
+        
 
         public League LeagueAdd(League league)
         {
             try
             {
-                if (string.IsNullOrEmpty(league.LeagueName))
+                if (!string.IsNullOrEmpty(league.LeagueName))
                 {
                     Add(league);
-                    return league;
+                    var result = _unitOfWork.Commit();
+                    if (result>0)
+                    {
+                        return league;
+                    }
+                    return null;
                 }
                 return null;
             }

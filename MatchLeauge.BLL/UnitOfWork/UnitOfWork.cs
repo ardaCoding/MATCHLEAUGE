@@ -17,14 +17,14 @@ namespace MatchLeauge.BLL.UnitOfWork
             _matchLeagueDB = matchLeagueDB;
         }
 
-        public void Commit()
+        public int Commit()
         {
-             _matchLeagueDB.SaveChanges();
+            return  _matchLeagueDB.SaveChanges();
         }
 
-        public int CommitXX()
-        {
-           return  _matchLeagueDB.SaveChanges();
-        }
+        //public int Commit()
+        //{
+        //   return  _matchLeagueDB.SaveChanges();
+        //}
     }
 }
