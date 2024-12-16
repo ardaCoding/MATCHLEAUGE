@@ -45,7 +45,7 @@ namespace MatchLeauge.API.Controllers
             #region 1.Hali
             //League league = new League();
             //league.LeagueName = leagueDTO.LeagueName;
-            /* Mapper=> Nedir
+            /*
             */
             //var add = _leagueRepository.LeagueAdd(league);//İsim, DTarihi, KayıtTarihi, Maaş,...=> RAM 
             //var add = _leagueRepository.LeagueAdd(_mapper.Map<League>(leagueDTO));

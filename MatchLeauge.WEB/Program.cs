@@ -12,7 +12,12 @@ namespace MatchLeauge.WEB
             builder.Services.AddControllersWithViews();
 
             #region DI
+            builder.Services.AddScoped<TeamAPI>();
+            builder.Services.AddHttpClient<TeamAPI>(
+                k=> k.BaseAddress = new Uri(builder.Configuration["Baseurl"])
+                {
 
+                });
             builder.Services.AddScoped<LeagueGetAPI>();
 
             builder.Services.AddHttpClient<LeagueGetAPI>(k =>
