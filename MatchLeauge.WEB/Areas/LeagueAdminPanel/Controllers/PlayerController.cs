@@ -5,10 +5,16 @@ namespace MatchLeauge.WEB.Areas.LeagueAdminPanel.Controllers
 {
     public class PlayerController : Controller
     {
-        private readonly PlayerAPI playerAPI;
-        public IActionResult PlayerList()
+        private readonly PlayerAPI _playerAPI;
+        public PlayerController(PlayerAPI playerAPI)
         {
-            return View();
+            _playerAPI = playerAPI;
+        }
+        public async Task<IActionResult> PlayerList()
+        {
+            var list = await _playerAPI.GetAll();
+
+            return View(list);
         }
 
         public IActionResult PlayerInsert()
