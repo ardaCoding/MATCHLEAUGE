@@ -1,9 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using MatchLeauge.WEB.APIService;
+using Microsoft.AspNetCore.Mvc;
 
 namespace MatchLeauge.WEB.Areas.LeagueAdminPanel.Controllers
 {
     public class PlayerController : Controller
     {
+        private readonly PlayerAPI playerAPI;
         public IActionResult PlayerList()
         {
             return View();

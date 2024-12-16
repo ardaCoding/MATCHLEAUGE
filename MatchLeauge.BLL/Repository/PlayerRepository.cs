@@ -1,4 +1,5 @@
 ﻿using MatchLeauge.DAL.IRepository;
+using MatchLeauge.DAL.IUnitOfWork;
 using MatchLeauge.DAL.MLContext;
 using System;
 using System.Collections.Generic;
@@ -9,10 +10,12 @@ using System.Threading.Tasks;
 
 namespace MatchLeauge.BLL.Repository
 {
-    public class PlayerRepository : GenericRepository<Player>
+    public class PlayerRepository : GenericRepository<Player>, IPlayerRepository
     {
-        public PlayerRepository(MatchLeagueDB matchLeagueDB) : base(matchLeagueDB)
+        IUnitOfWork _unitOfWork;
+        public PlayerRepository(MatchLeagueDB matchLeagueDB, IUnitOfWork unitOfWork) : base(matchLeagueDB)
         {
+            _unitOfWork = unitOfWork;
         }
         public Player PlayerAdd(Player player)
         {
