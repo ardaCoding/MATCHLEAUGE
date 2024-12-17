@@ -13,7 +13,7 @@ namespace MatchLeauge.API
 {
     public class Program
     {
-        public static async void Main(string[] args)
+        public static  void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
 
@@ -44,9 +44,6 @@ namespace MatchLeauge.API
                 });
 
             });
-
-    
-
 
 
             builder.Services.AddSwaggerDocument();
