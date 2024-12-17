@@ -5,13 +5,15 @@ using MatchLeauge.DAL.IRepository;
 using MatchLeauge.DAL.IUnitOfWork;
 using MatchLeauge.DAL.MLContext;
 using Microsoft.EntityFrameworkCore;
+using System.Net.Security;
 using System.Reflection;
+using System.Security.Cryptography.X509Certificates;
 
 namespace MatchLeauge.API
 {
     public class Program
     {
-        public static void Main(string[] args)
+        public static async void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
 
@@ -42,6 +44,10 @@ namespace MatchLeauge.API
                 });
 
             });
+
+    
+
+
 
             builder.Services.AddSwaggerDocument();
             var app = builder.Build();

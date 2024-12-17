@@ -4,11 +4,13 @@ using MatchLeauge.DAL.MLContext;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace MatchLeauge.BLL.Repository
 {
+    // logittech 500 serisi klavye
     public class TeamRepository : GenericRepository<Team>, ITeamRepository
     {
         IUnitOfWork _unitOfWork;
@@ -19,6 +21,7 @@ namespace MatchLeauge.BLL.Repository
 
         public List<Team> Teamlist()
         {
+            var lst = GetAll();
             throw new NotImplementedException();
         }
 
@@ -26,17 +29,27 @@ namespace MatchLeauge.BLL.Repository
         {
             try
             {
-                if (!string.IsNullOrEmpty(team.Name))
+                if (string.IsNullOrEmpty(team.Logo.ToString()))
                 {
-                    Add(team);
-                    var result = _unitOfWork.Commit();
-                    if (result > 0)
-                    {
-                        return team;
-                    }
-                    return null;
+                    throw new ArgumentException("Logo boş bırakılamaz.");
                 }
+
+                if (string.IsNullOrEmpty(team.Name))
+                {
+                    throw new ArgumentException("Takım ismi boş bırakılamaz.");
+                }
+
+                Add(team);
+
+                var result = _unitOfWork.Commit();//Kayıt yoksa 0 döner,kayıt varsa 1 döner
+                if (result > 0)
+                {
+                    return team;
+                }
+                //else
+                //{
                 return null;
+                //}
             }
             catch (Exception)
             {
@@ -44,9 +57,9 @@ namespace MatchLeauge.BLL.Repository
             }
         }
 
-       
 
-         public Team TeamDelete(Team team)
+
+        public Team TeamDelete(Team team)
         {
             throw new NotImplementedException();
         }

@@ -11,6 +11,7 @@ namespace MatchLeauge.DAL.IRepository
     {
 
         IQueryable<TEntity> GetAll();
+        //List<TEntity> GetAllQuery();
         //IQueryable<TEntity> FindAll();
         TEntity GetById(int Id);
 

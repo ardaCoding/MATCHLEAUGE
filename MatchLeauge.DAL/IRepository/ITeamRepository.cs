@@ -13,11 +13,11 @@ namespace MatchLeauge.DAL.IRepository
         Team TeamInsert(Team team);
         Team TeamUpdate(Team team);
         Team TeamDelete(Team team);
-        Team GetById(int Id);
+        //Team GetById(int Id);
 
         List<Team> Teamlist();
-        IQueryable<Team> GetAll();
-        IQueryable<Team> FindAll(Expression<Func<Team, bool>> predicate);
+        //IQueryable<Team> GetAll();
+        //IQueryable<Team> FindAll(Expression<Func<Team, bool>> predicate);
 
     }
 }

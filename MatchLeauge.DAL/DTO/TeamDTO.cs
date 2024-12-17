@@ -8,8 +8,8 @@ namespace MatchLeauge.DAL.DTO
 {
     public class TeamDTO
     {
-        public string TeamName { get; set; }
-        public byte TeamLogo { get; set; }
+        public string Name { get; set; }
+        public byte Logo { get; set; }
 
     }
 }
