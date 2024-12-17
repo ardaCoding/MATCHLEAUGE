@@ -47,7 +47,7 @@ namespace MatchLeauge.BLL.Repository
 
         public TEntity GetById(int Id)
         {
-            throw new NotImplementedException();
+           return  _dbSet.Find(Id);
         }
 
         public void Update(TEntity entity)

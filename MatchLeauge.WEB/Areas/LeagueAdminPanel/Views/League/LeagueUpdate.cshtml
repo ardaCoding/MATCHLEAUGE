@@ -1,8 +1,36 @@
-﻿
+﻿@using MatchLeauge.DAL.DTO;
 @{
     ViewData["Title"] = "LeagueUpdate";
     Layout = "~/Areas/LeagueAdminPanel/Views/Shared/_AdminLayout.cshtml";
 }
+@model GetLeagueDTO
 
-<h1>LeagueUpdate</h1>
+<div class="col-md-10">
+    <!-- Form Element sizes -->
+    <div class="card card-success">
+        <div class="card-header">
+            <h3 class="card-title">Lig Oluştur </h3>
+        </div>
+        <div class="card-body">
+            <form asp-action="LeagueInsert" asp-controller="League" method="post">
+
+                <div class="form-group">
+                    <label>Lig Adı</label>
+                    <input class="form-control" value="" name="leagueName" type="text" placeholder="Lig Adını Giriniz">
+                </div>
+
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-primary">LİG KAYDET</button>
+                </div>
+            </form>
+            <p>
+                @ViewBag.mesaj
+            </p>
+
+        </div>
+        <!-- /.card-body -->
+    </div>
+    <!-- /.card -->
+    <!-- /.card -->
+</div>
 

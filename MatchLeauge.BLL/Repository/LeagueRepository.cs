@@ -63,5 +63,10 @@ namespace MatchLeauge.BLL.Repository
         {
             throw new NotImplementedException();
         }
+
+        //public League GetLeagueById(int Id)
+        //{
+        //    return GetById(Id);
+        //}
     }
 }

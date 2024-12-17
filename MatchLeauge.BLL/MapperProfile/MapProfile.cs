@@ -14,6 +14,7 @@ namespace MatchLeauge.BLL.MapperProfile
         public MapProfile()
         {
             CreateMap<League, LeagueDTO>().ReverseMap();
+            CreateMap<League, GetLeagueDTO>().ReverseMap();
             CreateMap<Team, TeamDTO>().ReverseMap();
             CreateMap<Player, PlayerDTO>().ReverseMap();
 

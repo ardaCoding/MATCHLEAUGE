@@ -66,6 +66,18 @@ namespace MatchLeauge.API.Controllers
             return View();
         }
 
+        [HttpGet("GetLeagueById")]
+        public IActionResult GetLeagueById(int Id)
+        {
+            var getLeague=_leagueRepository.GetById(Id);//Table getirir
+            //var getLeagueDTO=_mapper.Map<League>(getLeague);//table olan nesne DTO ya map edildi
+            if (getLeague != null)
+            {
+                return ResultAPI(getLeague);
+            }
+            return View();
+        }
+
         //public IActionResult LeagueDelete()
         //{
         //    return View();

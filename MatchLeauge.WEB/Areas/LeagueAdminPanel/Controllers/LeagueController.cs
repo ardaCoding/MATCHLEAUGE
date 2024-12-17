@@ -31,13 +31,22 @@ namespace MatchLeauge.WEB.Areas.LeagueAdminPanel.Controllers
         {
             var getAPI = _leagueGetAPI.LeagueInsert(leagueDTO);
 
+            if (getAPI!=null)
+            {
+                ViewBag.mesaj =leagueDTO.LeagueName+ "ligi başarılı bir şekilde eklendi";
+                return View();
+            }
+
             return View();
         }
 
         [HttpGet]
         public IActionResult LeagueUpdate(int id)
         {
-            return View();
+            //Id si ile gelen Lig dayasını inputlara doldur
+            var getLig = _leagueGetAPI.GetLeagueById(id);
+
+            return View(getLig);
         }
 
         [HttpPost]
