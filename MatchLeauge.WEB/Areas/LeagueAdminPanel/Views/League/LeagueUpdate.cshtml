@@ -3,7 +3,7 @@
     ViewData["Title"] = "LeagueUpdate";
     Layout = "~/Areas/LeagueAdminPanel/Views/Shared/_AdminLayout.cshtml";
 }
-@model GetLeagueDTO
+@model LeagueDTO
 
 <div class="col-md-10">
     <!-- Form Element sizes -->
@@ -16,7 +16,7 @@
 
                 <div class="form-group">
                     <label>Lig Adı</label>
-                    <input class="form-control" value="" name="leagueName" type="text" placeholder="Lig Adını Giriniz">
+                    <input class="form-control" value="@Model.LeagueName" name="leagueName" type="text" placeholder="Lig Adını Giriniz">
                 </div>
 
                 <div class="card-footer">

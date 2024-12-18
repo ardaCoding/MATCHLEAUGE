@@ -56,7 +56,7 @@ namespace MatchLeauge.WEB.APIService
 
         }
 
-        public async Task<League> GetLeagueById(int id)
+        public async Task<LeagueDTO> GetLeagueById(int id)
         {
             ////swagger da olduğu gibi  'https://localhost:7046/api/League/GetLeagueById?Id=10' bu linki oluşturmak gereklidir
             var endPoint = "https://localhost:7046/api/League/GetLeagueById?Id=" ;
@@ -68,7 +68,7 @@ namespace MatchLeauge.WEB.APIService
 
             if (request.IsSuccessStatusCode)
             {
-                var getData = JsonConvert.DeserializeObject<League>(responseBody);
+                var getData = JsonConvert.DeserializeObject<LeagueDTO>(responseBody);
                 return getData;
             }
             return null;

@@ -55,7 +55,7 @@ namespace MatchLeauge.API.Controllers
             var add = _leagueRepository.LeagueAdd(_mapper.Map<League>(leagueDTO));
             if (add !=null)
             {
-                return ResultAPI(add);
+                return Ok(add);
             }
             return NoContent();
         }
@@ -70,10 +70,11 @@ namespace MatchLeauge.API.Controllers
         public IActionResult GetLeagueById(int Id)
         {
             var getLeague=_leagueRepository.GetById(Id);//Table getirir
-            //var getLeagueDTO=_mapper.Map<League>(getLeague);//table olan nesne DTO ya map edildi
+            var getLeagueDTO = _mapper.Map<LeagueDTO>(getLeague);//table olan nesne DTO ya map edildi
+
             if (getLeague != null)
             {
-                return ResultAPI(getLeague);
+                return Ok(getLeagueDTO);
             }
             return View();
         }
