@@ -41,10 +41,10 @@ namespace MatchLeauge.WEB.Areas.LeagueAdminPanel.Controllers
         }
 
         [HttpGet]
-        public IActionResult LeagueUpdate(int id)
+        public async Task<IActionResult> LeagueUpdate(int id)
         {
             //Id si ile gelen Lig dayasını inputlara doldur
-            var getLig = _leagueGetAPI.GetLeagueById(id);
+            var getLig =await  _leagueGetAPI.GetLeagueById(id);
 
             return View(getLig);
         }
