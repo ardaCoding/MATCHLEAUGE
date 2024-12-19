@@ -2,6 +2,7 @@
 using MatchLeauge.DAL.MLContext;
 using Newtonsoft.Json;
 using System.ComponentModel;
+using System.Net.Http.Json;
 using System.Runtime.CompilerServices;
 
 namespace MatchLeauge.WEB.APIService
@@ -28,17 +29,11 @@ namespace MatchLeauge.WEB.APIService
 
         public async Task<IQueryable<League>> GetAll2()
         {
-
-
             //APı linki=> End point=>
             var endPoint = "https://localhost:7046/api/League";
-
             var response = await _httpClient.GetFromJsonAsync<APIResponseDTO<IQueryable<League>>>(endPoint);
-            //
             return response.Data;
-
         }
-
 
         public async Task<League> LeagueInsert(LeagueDTO leagueDTO)
         {
@@ -72,6 +67,15 @@ namespace MatchLeauge.WEB.APIService
                 return getData;
             }
             return null;
+        }
+
+        public async Task<LeagueDTO> LeagueUpdate(LeagueDTO leagueDTO)
+        {
+            var endPoint = "https://localhost:7046/api/League/LeagueUpdate";
+
+            var request = await _httpClient.PutAsJsonAsync(endPoint, leagueDTO);
+            var response=await  request.Content.ReadFromJsonAsync<APIResponseDTO<LeagueDTO>>();
+            return response.Data;
         }
     }
 }

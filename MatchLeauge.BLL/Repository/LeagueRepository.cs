@@ -11,15 +11,15 @@ using System.Threading.Tasks;
 namespace MatchLeauge.BLL.Repository
 {
     public class LeagueRepository : GenericRepository<League>, ILeagueRepository
-    {  
+    {
         IUnitOfWork _unitOfWork;
         public LeagueRepository(MatchLeagueDB matchLeagueDB, IUnitOfWork unitOfWork) : base(matchLeagueDB)
         {
-            _unitOfWork= unitOfWork;
+            _unitOfWork = unitOfWork;
         }
 
-      
-        
+
+
 
         public League LeagueAdd(League league)
         {
@@ -29,7 +29,7 @@ namespace MatchLeauge.BLL.Repository
                 {
                     Add(league);
                     var result = _unitOfWork.Commit();
-                    if (result>0)
+                    if (result > 0)
                     {
                         return league;
                     }
@@ -61,7 +61,16 @@ namespace MatchLeauge.BLL.Repository
 
         public League LeagueUpdate(League league)
         {
-            throw new NotImplementedException();
+            Update(league);
+            var result = _unitOfWork.Commit();
+
+            if (result > 0)
+            {
+                return league;
+            }
+            return null;
+
+            //throw new NotImplementedException();
         }
 
         //public League GetLeagueById(int Id)

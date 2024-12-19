@@ -18,7 +18,7 @@ namespace MatchLeauge.API.Controllers
         IUnitOfWork _unitOfWork;
         IMapper _mapper;
 
-        public LeagueController(ILeagueRepository leagueRepository, IUnitOfWork unitOfWork,IMapper mapper)
+        public LeagueController(ILeagueRepository leagueRepository, IUnitOfWork unitOfWork, IMapper mapper)
         {
             _leagueRepository = leagueRepository;
             _unitOfWork = unitOfWork;
@@ -51,25 +51,29 @@ namespace MatchLeauge.API.Controllers
             //var add = _leagueRepository.LeagueAdd(_mapper.Map<League>(leagueDTO));
             //var result = _unitOfWork.Commit();//Database(Server)//Id:7// 
             #endregion
-                        
+
             var add = _leagueRepository.LeagueAdd(_mapper.Map<League>(leagueDTO));
-            if (add !=null)
+            if (add != null)
             {
                 return Ok(add);
             }
             return NoContent();
         }
 
-        [HttpDelete]
-        public IActionResult LeagueUpdate()
+        [HttpPut("LeagueUpdate")]
+        public IActionResult LeagueUpdate(LeagueDTO leagueDTO)//request-istek
         {
-            return View();
+            var mapLeague = _mapper.Map<League>(leagueDTO);//DTO nesnesi League e dönüştürüldü
+            var getLeague = _leagueRepository.LeagueUpdate(mapLeague);//Update
+            var getLeagueDTO = _mapper.Map<LeagueDTO>(getLeague);//League'i 
+
+            return Ok(getLeagueDTO);//response
         }
 
         [HttpGet("GetLeagueById")]
         public IActionResult GetLeagueById(int Id)
         {
-            var getLeague=_leagueRepository.GetById(Id);//Table getirir
+            var getLeague = _leagueRepository.GetById(Id);//Table getirir
             var getLeagueDTO = _mapper.Map<LeagueDTO>(getLeague);//table olan nesne DTO ya map edildi
 
             if (getLeague != null)
