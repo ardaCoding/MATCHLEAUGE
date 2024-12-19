@@ -5,6 +5,10 @@
 2) Bütün tablolar için migration yapılacak=> 1-1, 1-Sonsuz  işlemleri yapılacak
 ---------------------------------------------
 15 Aralık
+1- bütün tablo İnsert işlemleri yapılacak--
+2-Bütün tabloların Listeleme işlemleri tekrar gözden geçirilecek--
+------------------------------------------------------------------------
+19 Aralık
 1- bütün tablo İnsert işlemleri yapılacak
 2-Bütün tabloların Listeleme işlemleri tekrar gözden geçirilecek
-
+3-Bütün tabloların Update işelmelri yapılacak

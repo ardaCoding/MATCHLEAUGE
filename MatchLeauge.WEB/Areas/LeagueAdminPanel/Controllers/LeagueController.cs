@@ -16,7 +16,7 @@ namespace MatchLeauge.WEB.Areas.LeagueAdminPanel.Controllers
 
         public async Task<IActionResult> LeagueList()
         {
-          var list=  await _leagueGetAPI.GetAll();
+            var list = await _leagueGetAPI.GetAll();
 
             return View(list);
         }
@@ -31,9 +31,9 @@ namespace MatchLeauge.WEB.Areas.LeagueAdminPanel.Controllers
         {
             var getAPI = _leagueGetAPI.LeagueInsert(leagueDTO);
 
-            if (getAPI!=null)
+            if (getAPI != null)
             {
-                ViewBag.mesaj =leagueDTO.LeagueName+ "ligi başarılı bir şekilde eklendi";
+                ViewBag.mesaj = leagueDTO.LeagueName + "ligi başarılı bir şekilde eklendi";
                 return View();
             }
 
@@ -44,15 +44,20 @@ namespace MatchLeauge.WEB.Areas.LeagueAdminPanel.Controllers
         public async Task<IActionResult> LeagueUpdate(int id)
         {
             //Id si ile gelen Lig dayasını inputlara doldur
-            var getLig =await  _leagueGetAPI.GetLeagueById(id);
+            var getLig = await _leagueGetAPI.GetLeagueById(id);
 
             return View(getLig);
         }
 
         [HttpPost]
-        public IActionResult LeagueUpdate(string blabla)
+        public IActionResult LeagueUpdate(LeagueDTO leaguedto)
         {
-            return View();
+            var updateLeague = _leagueGetAPI.LeagueUpdate(leaguedto);
+
+#warning bu kısımda route ayarı View() için yapılacak
+            //return View(updateLeague);//
+            return RedirectToAction("LeagueList", "League", "LeagueAdminPanel");//1.parametre view,2.parametre Controller,3.parametre ise Admin Paneli route isimlerini temsil eder
+
         }
 
         [HttpGet]

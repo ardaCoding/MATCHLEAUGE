@@ -1,9 +1,10 @@
 ﻿@using MatchLeauge.DAL.DTO;
+@model LeagueDTO
 @{
     ViewData["Title"] = "LeagueUpdate";
     Layout = "~/Areas/LeagueAdminPanel/Views/Shared/_AdminLayout.cshtml";
 }
-@model LeagueDTO
+
 
 <div class="col-md-10">
     <!-- Form Element sizes -->
@@ -12,7 +13,7 @@
             <h3 class="card-title">Lig Oluştur </h3>
         </div>
         <div class="card-body">
-            <form asp-action="LeagueInsert" asp-controller="League" method="post">
+            <form asp-action="LeagueUpdate" asp-controller="LeagueAdminPanel/League" method="post">
 
                 <div class="form-group">
                     <label>Lig Adı</label>
@@ -20,7 +21,7 @@
                 </div>
 
                 <div class="card-footer">
-                    <button type="submit" class="btn btn-primary">LİG KAYDET</button>
+                    <button type="submit" class="btn btn-primary">LİG GÜNCELLE</button>
                 </div>
             </form>
             <p>

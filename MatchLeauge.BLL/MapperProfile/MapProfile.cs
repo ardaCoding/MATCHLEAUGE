@@ -9,11 +9,12 @@ using System.Threading.Tasks;
 
 namespace MatchLeauge.BLL.MapperProfile
 {
-    public class MapProfile:Profile
+    public class MapProfile : Profile
     {
         public MapProfile()
         {
-            CreateMap<League, LeagueDTO>().ReverseMap();
+            CreateMap<League, LeagueDTO>().ReverseMap();//true
+            //CreateMap<League, LeagueDTO>();
             CreateMap<League, GetLeagueDTO>().ReverseMap();
             CreateMap<Team, TeamDTO>().ReverseMap();
             CreateMap<Player, PlayerDTO>().ReverseMap();
