@@ -38,7 +38,7 @@ namespace MatchLeauge.API.Controllers
         }
 
 
-        //[HttpPost]//=>https://localhost:7046/api/LeagueInsert"
+       
         [HttpPost("AddLeague")]//=>https://localhost:7046/api/AddLeague"
         public IActionResult LeagueInsert(LeagueDTO leagueDTO)
         {
