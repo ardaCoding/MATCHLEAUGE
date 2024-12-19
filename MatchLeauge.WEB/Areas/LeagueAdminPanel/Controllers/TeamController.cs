@@ -29,7 +29,7 @@ namespace MatchLeauge.WEB.Areas.LeagueAdminPanel.Controllers
         public async Task<IActionResult> TeamUpdate(int id)
         {
             //Id si ile gelen Lig dayasını inputlara doldur
-            var getLig = await _teamAPI.(id);
+            var getLig = await _teamAPI.GetTeamById(id);
 
             return View(getLig);
         }

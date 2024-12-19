@@ -44,7 +44,11 @@ namespace MatchLeauge.API
                 });
 
             });
-
+            HttpClientHandler handler = new HttpClientHandler
+            {
+                ServerCertificateCustomValidationCallback = (message, cert, chain, errors) => true
+            };
+            HttpClient client = new HttpClient(handler);
 
             builder.Services.AddSwaggerDocument();
             var app = builder.Build();
