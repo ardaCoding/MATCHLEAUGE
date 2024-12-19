@@ -25,6 +25,14 @@ namespace MatchLeauge.WEB.Areas.LeagueAdminPanel.Controllers
 
             return View();
         }
+        [HttpGet]
+        public async Task<IActionResult> TeamUpdate(int id)
+        {
+            //Id si ile gelen Lig dayasını inputlara doldur
+            var getLig = await _teamAPI.(id);
+
+            return View(getLig);
+        }
 
         public IActionResult Index()
         {

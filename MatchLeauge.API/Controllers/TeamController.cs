@@ -50,5 +50,18 @@ namespace MatchLeauge.API.Controllers
             return NoContent();
         }
 
+        [HttpGet("GetTeamById")]
+        public IActionResult GetLeagueById(int Id)
+        {
+            var getTeam = _teamRepository.GetById(Id);
+            var getTeamDTO = _mapper.Map<TeamDTO>(getTeam);//table olan nesne DTO ya map edildi
+
+            if (getTeam != null)
+            {
+                return Ok(getTeamDTO);
+            }
+            return View();
+        }
+
     }
 }
