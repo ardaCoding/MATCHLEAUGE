@@ -19,8 +19,6 @@ namespace MatchLeauge.BLL.Repository
         }
 
 
-
-
         public League LeagueAdd(League league)
         {
             try
@@ -70,12 +68,9 @@ namespace MatchLeauge.BLL.Repository
             }
             return null;
 
-            //throw new NotImplementedException();
+            
         }
 
-        //public League GetLeagueById(int Id)
-        //{
-        //    return GetById(Id);
-        //}
+        
     }
 }

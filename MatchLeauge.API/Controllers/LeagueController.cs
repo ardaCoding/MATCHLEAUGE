@@ -83,19 +83,6 @@ namespace MatchLeauge.API.Controllers
             return View();
         }
 
-        //public IActionResult LeagueDelete()
-        //{
-        //    return View();
-        //}
-
-        //public IActionResult LeagueFind()
-        //{
-        //    return View();
-        //}
-
-        //public IActionResult LeagueDetail()
-        //{
-        //    return View();
-        //}
+        
     }
 }

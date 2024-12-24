@@ -49,5 +49,14 @@ namespace MatchLeauge.WEB.APIService
             }
             return null;
         }
+
+        public async Task<TeamDTO> TeamUpdate(TeamDTO teamDTO)
+        {
+            var endPoint = "https://localhost:7046/api/Team/TeamUpdate";
+            var request = await _httpClient.PutAsJsonAsync(endPoint, teamDTO);
+            var response = await request.Content.ReadFromJsonAsync<APIResponseDTO<TeamDTO>>();
+            return response.Data;
+
+        }
     }
 }

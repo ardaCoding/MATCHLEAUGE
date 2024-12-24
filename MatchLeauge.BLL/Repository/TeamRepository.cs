@@ -65,7 +65,14 @@ namespace MatchLeauge.BLL.Repository
         }
         public Team TeamUpdate(Team team)
         {
-            throw new NotImplementedException();
+            Update(team);
+            var result = _unitOfWork.Commit();
+
+            if (result > 0)
+            {
+                return team;
+            }
+            return null;
         }
     }
 }

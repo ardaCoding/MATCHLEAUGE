@@ -56,7 +56,7 @@ namespace MatchLeauge.WEB.Areas.LeagueAdminPanel.Controllers
 
 #warning bu kısımda route ayarı View() için yapılacak
             //return View(updateLeague);//
-            return RedirectToAction("LeagueList", "League", "LeagueAdminPanel");//1.parametre view,2.parametre Controller,3.parametre ise Admin Paneli route isimlerini temsil eder
+           return RedirectToAction("LeagueList", "League", "LeagueAdminPanel");//1.parametre view,2.parametre Controller,3.parametre ise Admin Paneli route isimlerini temsil eder
 
         }
 

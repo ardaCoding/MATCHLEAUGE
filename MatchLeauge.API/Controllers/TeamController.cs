@@ -62,6 +62,15 @@ namespace MatchLeauge.API.Controllers
             }
             return View();
         }
+        [HttpPut("TeamUpdate")]
+        public IActionResult LeagueUpdate(TeamDTO teamDTO)
+        {
+            var mapTeam = _mapper.Map<Team>(teamDTO);
+            var getTeam = _teamRepository.Update(mapTeam);
+            var getLTeamDTO = _mapper.Map<TeamDTO>(getTeam);
+
+            return Ok(getLTeamDTO);//response
+        }
 
     }
 }

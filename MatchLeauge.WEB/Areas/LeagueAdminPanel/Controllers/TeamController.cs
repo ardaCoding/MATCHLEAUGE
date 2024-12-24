@@ -29,10 +29,24 @@ namespace MatchLeauge.WEB.Areas.LeagueAdminPanel.Controllers
         public async Task<IActionResult> TeamUpdate(int id)
         {
             //Id si ile gelen Lig dayasını inputlara doldur
-            var getLig = await _teamAPI.GetTeamById(id);
+            var getTeamApi = await _teamAPI.GetTeamById(id);
 
-            return View(getLig);
+            return View(getTeamApi);
         }
+
+
+        [HttpPost]
+        public IActionResult TeamUpdate(TeamDTO teamDTO)
+        {
+            var updateLeague = _teamAPI.TeamUpdate(teamDTO);
+
+
+            
+       return RedirectToAction("TeamList", "Team", "LeagueAdminPanel");
+      //1.parametre view,2.parametre Controller,3.parametre ise Admin Paneli route isimlerini temsil eder
+
+        }
+
 
         public IActionResult Index()
         {
